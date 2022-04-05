@@ -1,0 +1,19 @@
+@mixin normalizar {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  ul,
+  ol {
+    list-style-type: none;
+  }
+}
+
+@mixin texto($font, $size, $weigth, $height) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weigth;
+  line-height: $height;
+}

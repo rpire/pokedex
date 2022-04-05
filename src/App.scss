@@ -1,0 +1,16 @@
+@use "." as *;
+
+@include normalizar;
+
+body {
+  background-color: $fondo-pri;
+  color: $txt-pri;
+}
+
+h1 {
+  @include texto(monospace, 48px, 500, 48px);
+}
+
+p {
+  @include texto(monospace, 18px, 300, 18px);
+}
