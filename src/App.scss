@@ -11,6 +11,7 @@ h1 {
   @include texto(monospace, 48px, 500, 48px);
 }
 
-p {
+p,
+a {
   @include texto(monospace, 18px, 300, 18px);
 }
