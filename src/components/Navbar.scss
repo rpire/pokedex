@@ -1,0 +1,27 @@
+@use ".." as *;
+
+nav {
+  @include flex-center(false);
+
+  justify-content: space-between;
+  gap: 15%;
+  background-color: $alt-bg;
+  width: 100vw;
+  height: 35px;
+}
+
+a {
+  color: $acento;
+}
+
+a:first-child {
+  margin-left: 2.5%;
+}
+
+a:last-child {
+  margin-right: 2.5%;
+}
+
+.active {
+  text-decoration: underline;
+}
