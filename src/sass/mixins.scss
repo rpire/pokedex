@@ -9,6 +9,10 @@
   ol {
     list-style-type: none;
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 @mixin texto($font, $size, $weigth, $height) {
@@ -16,4 +20,16 @@
   font-size: $size;
   font-weight: $weigth;
   line-height: $height;
+}
+
+@mixin flex-center($justify: true, $align: true) {
+  display: flex;
+
+  @if $justify {
+    justify-content: center;
+  }
+
+  @if $align {
+    align-items: center;
+  }
 }
