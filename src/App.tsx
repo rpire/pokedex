@@ -1,10 +1,19 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import './App.scss';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/pages/home/Home';
+import Pokedex from './components/pages/pokedex/Pokedex';
+import ErrorPage from './components/pages/error/ErrorPage';
+import Navbar from './components/Navbar';
 
-const App: FunctionComponent = () => (
+const App: FC = () => (
   <>
-    <h1>Pokédex</h1>
-    <p>Bestiario de Pokémon</p>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="pokedex" element={<Pokedex />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
   </>
 );
 
