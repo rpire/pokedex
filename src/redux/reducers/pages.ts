@@ -22,7 +22,7 @@ export interface IPageItem {
   types: IPkmTypes[],
 }
 
-interface IState {
+export interface IState {
   list: IPageItem[],
   loading: boolean,
   error: boolean,
@@ -85,7 +85,7 @@ export const fetchPage = (list: Pokemon[]) => (dispatch: Dispatch<unknown>) => {
   dispatch(loadingPage());
   dispatch(clearPage());
   list.forEach((pokemon, index) => {
-    if (index === 11) {
+    if (index === list.length - 1) {
       dispatch(fetchPageItem(pokemon.url, true));
     } else {
       dispatch(fetchPageItem(pokemon.url));

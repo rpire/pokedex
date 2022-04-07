@@ -3,8 +3,11 @@
 @include normalizar;
 
 body {
+  position: relative;
   background-color: $fondo-pri;
   color: $txt-pri;
+  min-height: calc(100vh);
+  padding-bottom: 50px;
 }
 
 h1 {
