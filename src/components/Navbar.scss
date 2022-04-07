@@ -7,13 +7,20 @@ nav {
   justify-content: space-between;
   gap: 15%;
   background: linear-gradient($fondo-sec, $fondo-ter);
-  width: 100vw;
+  width: 100%;
   height: 35px;
   padding: 0 2.5%;
 }
 
 a {
+  @include flex-center();
+  
+  gap: 10px;
   color: $acento-pri;
+
+  svg {
+    font-size: 20px;
+  }
 }
 
 .active {
