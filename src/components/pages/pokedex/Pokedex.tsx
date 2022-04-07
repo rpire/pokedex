@@ -4,6 +4,8 @@ import usePages from '../../../hooks/usePages';
 import { RootState } from '../../../redux/configureStore';
 import { fetchPage } from '../../../redux/reducers/pages';
 import { Pokemon } from '../../../redux/reducers/pokemon';
+import PagesBtnContainer from './PagesBtnContainer';
+import PokedexHeader from './PokedexHeader';
 import PokemonList from './PokemonList';
 
 const Pokedex: FC = () => {
@@ -46,22 +48,14 @@ const Pokedex: FC = () => {
 
   return (
     <>
-      <h1>Pokémon</h1>
-      <p>Todos tus Pokémon favoritos en un solo lugar. Atrápalos ya!</p>
+      <PokedexHeader />
       <PokemonList pkmList={page.list} />
-      { (pageNum > 1) && (
-        <button type="button" onClick={decreasePage}>
-          Anterior
-        </button>
-      )}
-
-      <span>{pageNum}</span>
-
-      { (pageNum * 12 < pokemon.list.length) && (
-        <button type="button" onClick={increasePage}>
-          Siguiente
-        </button>
-      )}
+      <PagesBtnContainer
+        pageNum={pageNum}
+        increasePage={increasePage}
+        decreasePage={decreasePage}
+        pokemon={pokemon.list}
+      />
     </>
   );
 };
