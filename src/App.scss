@@ -8,10 +8,22 @@ body {
 }
 
 h1 {
-  @include texto(monospace, 48px, 500, 48px);
+  @include texto(orbitron, 48px, 700, 48px);
+
+  color: $acento-sec;
+  text-shadow: 2px 2px #1d89f5;
+  margin: 15px 2.5%;
 }
 
 p,
 a {
-  @include texto(monospace, 18px, 300, 18px);
+  @include texto(roboto, 18px, 300, 18px);
+}
+
+p {
+  margin: 10px 2.5%;
+}
+
+a {
+  font-weight: 400;
 }

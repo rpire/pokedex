@@ -33,3 +33,9 @@
     align-items: center;
   }
 }
+
+@mixin box-shadow($h, $v, $blur: 0, $spread: 0, $color) {
+  box-shadow: $h $v $blur $spread $color;
+  -webkit-box-shadow: $h $v $blur $spread $color;
+  -moz-box-shadow: $h $v $blur $spread $color;
+}
