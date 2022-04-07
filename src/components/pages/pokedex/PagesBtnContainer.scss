@@ -1,0 +1,43 @@
+@use "../../../." as *;
+
+.pg-btn-container {
+  @include flex-center(false);
+
+  justify-content: space-evenly;
+  background-color: $fondo-sec;
+  width: 95%;
+  max-width: 800px;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.pg-btn {
+  @include flex-center;
+  @include texto(roboto, 18px, 700, 20px);
+
+  cursor: pointer;
+  background-color: $acento-pri;
+  width: 35%;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.pg-btn:hover {
+  background-color: $acento-ter;
+  color: $txt-pri;
+}
+
+.pg-btn:disabled {
+  cursor: not-allowed;
+  background-color: $fondo-ter;
+  color: $fondo-sec;
+}
+
+.pg-counter {
+  @include texto(roboto, 22px, 700, 25px);
+
+  text-decoration: underline;
+}
