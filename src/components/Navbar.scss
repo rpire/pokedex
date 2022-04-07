@@ -2,24 +2,18 @@
 
 nav {
   @include flex-center(false);
+  @include box-shadow(0, 1px, 7px, 1px, $sombra-pri);
 
   justify-content: space-between;
   gap: 15%;
-  background-color: $alt-bg;
+  background: linear-gradient($fondo-sec, $fondo-ter);
   width: 100vw;
   height: 35px;
+  padding: 0 2.5%;
 }
 
 a {
-  color: $acento;
-}
-
-a:first-child {
-  margin-left: 2.5%;
-}
-
-a:last-child {
-  margin-right: 2.5%;
+  color: $acento-pri;
 }
 
 .active {
