@@ -11,7 +11,7 @@ export type Pokemon = {
   url: 'string',
 }
 
-interface IState {
+export interface IState {
   list: Pokemon[],
   loading: boolean,
   error: boolean,
