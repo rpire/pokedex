@@ -7,6 +7,7 @@ import Pokedex from './components/pages/pokedex/Pokedex';
 import ErrorPage from './components/pages/error/ErrorPage';
 import Navbar from './components/Navbar';
 import { fetchPokemon } from './redux/reducers/pokemon';
+import Footer from './components/Footer';
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const App: FC = () => {
         <Route path="pokedex" element={<Pokedex />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </>
   );
 };
