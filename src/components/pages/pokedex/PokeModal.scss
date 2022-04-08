@@ -1,0 +1,60 @@
+@use "../../../." as *;
+
+.modal-curtain,
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+.modal-curtain {
+  @include flex-center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $sombra-pri;
+  transition: opacity 0.5s;
+}
+
+.modal {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: $fondo-ter;
+  padding: 50px 2.5%;
+  transition: transform 0.5s;
+  overflow-y: scroll;
+}
+
+.modal-cross {
+  position: absolute;
+  top: 25px;
+  right: 7.5%;
+  font-size: 40px;
+}
+
+.modal-cross:hover {
+  color: $alerta-pri;
+}
+
+.modal-id {
+  @include texto(roboto, 16px, 400, 16px);
+}
+
+.modal-title,
+.types-title {
+  @include texto(orbitron, 35px, 700, 35px);
+}
+
+.curtain-transition {
+  opacity: 0;
+}
+
+.modal-transition {
+  transform: scale(0);
+}
+
+.invisible {
+  display: none;
+}
