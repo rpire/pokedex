@@ -1,0 +1,28 @@
+@use "../../../." as *;
+
+.modal-img-container {
+  display: flex;
+  gap: 5px;
+  margin: 35px 0;
+}
+
+.modal-img-frame {
+  @include flex-center;
+
+  flex-direction: column;
+  background-color: $fondo-pri;
+  width: 50%;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+
+.modal-img {
+  width: 100%;
+  max-width: 220px;
+}
+
+.img-desc {
+  @include texto(roboto, 16px, 300, 16px);
+
+  margin: 0 5%;
+}

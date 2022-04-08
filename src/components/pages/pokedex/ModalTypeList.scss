@@ -1,0 +1,18 @@
+@use "../../../." as *;
+
+.types-list {
+  @include flex-center(false);
+
+  justify-content: space-evenly;
+  margin-top: 45px;
+}
+
+li {
+  @include flex-center;
+  @include texto(roboto, 24px, 400, 24px);
+
+  color: $acento-pri;
+  padding: 10px 15px;
+  border: 1px solid $acento-pri;
+  border-radius: 5px;
+}
