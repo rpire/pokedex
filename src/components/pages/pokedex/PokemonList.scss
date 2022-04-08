@@ -4,5 +4,10 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;
+  max-width: 900px;
   margin: 0 2.5%;
+}
+
+.err-msg {
+  color: $alerta-pri;
 }

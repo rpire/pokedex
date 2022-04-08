@@ -1,7 +1,9 @@
 import { FC } from 'react';
+import useSearch from '../../../hooks/useSearch';
 import { IPageItem } from '../../../redux/reducers/pages';
-import PokemonCard from './PokemonCard';
+import PokedexDisplay from './PokedexDisplay';
 import './PokemonList.scss';
+import SearchBar from './SearchBar';
 
 interface IProps {
   pkmList: IPageItem[],
@@ -10,20 +12,16 @@ interface IProps {
 const PokemonList: FC<IProps> = ({ pkmList }) => {
   pkmList.sort((a, b) => a.id - b.id);
 
-  return (
-    <section>
-      {pkmList.map((pkm) => {
-        const formattedName = pkm.name.replace(/^\w/, (c) => c.toUpperCase());
+  const { search, changeSearch } = useSearch('');
 
-        return (
-          <PokemonCard
-            key={pkm.id}
-            pkm={pkm}
-            formattedName={formattedName}
-          />
-        );
-      })}
-    </section>
+  return (
+    <>
+      <SearchBar
+        search={search}
+        changeSearch={changeSearch}
+      />
+      <PokedexDisplay pkmList={pkmList} />
+    </>
   );
 };
 
