@@ -6,7 +6,7 @@ type Hook = {
   decreasePage: () => void,
 }
 
-const usePages = (initState = 1): Hook => {
+const usePage = (initState = 1): Hook => {
   const [pageNum, setPageNum] = useState(initState);
 
   const increasePage = (): void => setPageNum(pageNum + 1);
@@ -18,4 +18,4 @@ const usePages = (initState = 1): Hook => {
   };
 };
 
-export default usePages;
+export default usePage;
