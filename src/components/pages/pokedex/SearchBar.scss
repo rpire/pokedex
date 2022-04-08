@@ -1,0 +1,50 @@
+@use "../../../." as *;
+
+.search-container,
+label {
+  @include flex-center(false);
+}
+
+.search-container {
+  height: 45px;
+  margin: 35px 2.5% 20px 2.5%;
+
+  * {
+    height: 100%;
+  }
+}
+
+label {
+  justify-content: space-between;
+  background-color: $fondo-sec;
+  padding-left: 10px;
+  border-radius: 10px 0 0 10px;
+}
+
+.search-label {
+  @include texto(roboto, 22px, 400, 22px);
+  @include flex-center();
+
+  color: $acento-pri;
+  width: 40%;
+  margin-right: 15px;
+}
+
+input {
+  background-color: $fondo-ter;
+  color: $txt-pri;
+  width: 60%;
+  font-size: 18px;
+  padding-left: 10px;
+  border: none;
+}
+
+.search-btn {
+  cursor: pointer;
+  background-color: $acento-pri;
+  color: $txt-sec;
+  font-size: 22px;
+  width: 55px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+}

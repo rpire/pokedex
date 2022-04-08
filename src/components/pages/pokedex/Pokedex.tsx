@@ -1,30 +1,23 @@
 import { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import usePages from '../../../hooks/usePages';
+import usePage from '../../../hooks/usePage';
+import currentPage, { pkmSlice } from '../../../logic/pages';
 import { RootState } from '../../../redux/configureStore';
 import { fetchPage } from '../../../redux/reducers/pages';
-import { Pokemon } from '../../../redux/reducers/pokemon';
 import PagesBtnContainer from './PagesBtnContainer';
 import PokedexHeader from './PokedexHeader';
 import PokemonList from './PokemonList';
 
 const Pokedex: FC = () => {
-  const currentPage = localStorage.getItem('currentPage');
-  const initPageNum = currentPage ? parseInt(currentPage, 10) : 1;
+  const { pokemon, page } = useSelector((state: RootState) => state);
 
   const {
     pageNum, increasePage, decreasePage,
-  } = usePages(initPageNum);
-
-  const pkmSlice = (arr: Pokemon[], num: number): Pokemon[] => (
-    arr.slice((num - 1) * 12, (num - 1) * 12 + 12)
-  );
+  } = usePage(currentPage());
 
   const magicNum = pageNum * 12 - 11;
 
   const dispatch = useDispatch();
-
-  const { pokemon, page } = useSelector((state: RootState) => state);
 
   useEffect(() => {
     if (page.list[0] === undefined) {
@@ -43,7 +36,7 @@ const Pokedex: FC = () => {
   }
 
   if (pokemon.error || page.error) {
-    return <p>Up! Trata refrescando la página.</p>;
+    return <p>Ups! Trata refrescando la página.</p>;
   }
 
   return (

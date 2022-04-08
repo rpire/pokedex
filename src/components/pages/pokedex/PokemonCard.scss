@@ -3,6 +3,7 @@
 .pkm-card {
   @include flex-center(false);
 
+  cursor: pointer;
   flex-direction: column;
   background-color: $fondo-ter;
   color: $txt-pri;
