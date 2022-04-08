@@ -1,2 +1,0 @@
-# pokedex
-Bestiario de Pokémon
