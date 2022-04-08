@@ -7,7 +7,7 @@ const LOADED_PAGE = 'App/pages/LOADED_PAGE';
 const LOAD_PAGE_ITEM = 'App/pages/LOAD_PAGE_ITEM';
 const LOAD_PAGE_FAIL = 'App/pages/LOAD_PAGE_FAIL';
 
-interface IPkmTypes {
+export interface IPkmTypes {
   slot: number,
   type: { name: string },
 }

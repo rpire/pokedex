@@ -1,6 +1,4 @@
 import { useState } from 'react';
-// import { IState as IPgState } from '../redux/reducers/pages';
-// import { IState as IPkmState } from '../redux/reducers/pokemon';
 
 type Hook = {
   pageNum: number,
